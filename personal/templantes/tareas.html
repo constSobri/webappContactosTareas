@@ -1,0 +1,19 @@
+{% include 'base_generic.html' %}
+
+{% block title %}
+<title>Tareas</title>
+{% endblock title %}
+
+{% block main %}
+<h1>Tareas</h1>
+<p>Aqui encontraras todas las tareas pendientes</p>
+<button><a href="{% url 'tareas_create' %}">Crear tarea</a></button>
+{% include 'modules/filtrado_por_letra.html' %}
+
+{% for tarea in tareas %}
+    <ul>
+        <li>{{ tarea }} <button><a href="{% url 'tarea_detail' tarea.id %}">Ver</a></button><button><a href="{% url 'tarea_edit' tarea.id %}">Editar</a></button><button><a href="{% url 'tarea_remove' id=tarea.id %}">Eliminar</a></button></li>
+    </ul>
+{% endfor %}
+
+{% endblock main %}

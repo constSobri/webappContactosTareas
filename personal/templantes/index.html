@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}
+<title>Inicio</title>
+{% endblock title %}
+
+{% block main %}
+<h1>Secciones:</h1>
+<ul>
+    <li><a href="{% url 'tareas' %}">Tareas</a></li>
+    <li><a href="{% url 'contactos' %}">Contactos</a></li>
+</ul>
+{% endblock main %}

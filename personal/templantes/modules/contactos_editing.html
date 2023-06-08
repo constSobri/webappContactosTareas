@@ -1,0 +1,5 @@
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="submit" value="Editar"><button><a href="{% url 'contactos' %}">Volver</a></button>
+</form>

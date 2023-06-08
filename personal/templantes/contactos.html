@@ -1,0 +1,18 @@
+{% include 'base_generic.html' %}
+
+{% block title %}
+<title>Contactos</title>
+{% endblock title %}
+
+{% block main %}
+<h1>Contactos</h1>
+<p>Aqui encontraras todos tus contactos</p>
+{% include 'modules/filtrado_por_letra.html' %}
+
+<button><a href="{% url 'contactos_create' %}">Crear contacto</a></button>
+{% for contacto in contactos %}
+    <ul>
+        <li>{{ contacto }} <button><a href="{% url 'contactos_detail' contacto.id %}">Ver</a></button><button><a href="{% url 'contactos_edit' contacto.id %}">Editar</a></button><button><a href="{% url 'contactos_remove' id=contacto.id %}">Eliminar</a></button></li>
+    </ul>
+{% endfor %}
+{% endblock main %}

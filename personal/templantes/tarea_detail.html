@@ -1,0 +1,10 @@
+{% include 'base_generic.html' %}
+
+{% block main %}
+<h1>Nombre: {{ tarea.name }}</h1>
+<h3>Tiempo para finalizar: {{ tarea.date_to_complete }}</h3>
+<h3>Descripcion: {{ tarea.description }}</h3>
+<h3>Prioridad: {{ tarea.priority }}</h3>
+
+<button><a href="{% url 'tareas' %}">Volver</a></button>
+{% endblock main %}

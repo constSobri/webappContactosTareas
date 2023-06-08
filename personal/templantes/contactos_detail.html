@@ -1,0 +1,12 @@
+{% include 'base_generic.html' %}
+
+{% block main %}
+<h1>Nombre: {{ contacto.name }}</h1>
+<h3>Correo: {{ contacto.email }}</h3>
+<h3>Telefono: {{ contacto.phone }}</h3>
+<h3>Direccion: {{ contacto.address }}</h3>
+<h3>C.P.: {{ contacto.postal_code }}</h3>
+<h3>Descripcion: {{ contacto.description }}</h3>
+
+<button><a href="{% url 'contactos' %}">Volver</a></button>
+{% endblock main %}
